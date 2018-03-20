@@ -3,11 +3,11 @@ import React from 'react';
 import classes from './Modal.scss';
 
 import AuxWrapper from '../../../hoc/AuxWrapper';
-import BackDrop from '../Backdrop/Backdrop';
+import Backdrop from '../Backdrop/Backdrop';
 
 const modal = (props) => (
   <AuxWrapper>
-    <BackDrop show={props.show} clicked={props.modalClosed} />
+    <Backdrop show={props.show} clicked={props.modalClosed} />
     <div
       className={classes.Modal}
       style={{
