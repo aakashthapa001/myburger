@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import AuxWrapper from '../../hoc/AuxWrapper';
+import AuxWrapper from '../AuxWrapper/AuxWrapper';
 import classes from './Layout.scss';
 
-import Toolbar from '../Navigation/Toolbar/Toolbar';
-import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
+import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
+import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 
 class Layout extends Component {
   state = {
@@ -18,7 +18,7 @@ class Layout extends Component {
   };
 
   sideDrawerToggleHandler = () => {
-    this.setState((prevState) => {
+    this.setState(prevState => {
       return { showSideDrawer: !prevState.showSideDrawer };
     });
   };
@@ -27,15 +27,10 @@ class Layout extends Component {
     return (
       <AuxWrapper>
         <Toolbar drawerToggleClicked={this.sideDrawerToggleHandler} />
-        <SideDrawer
-          open={this.state.showSideDrawer}
-          closed={this.sideDrawerClosedHandler}
-        />
-        <main className={classes.Content}>
-          {this.props.children}
-        </main>
+        <SideDrawer open={this.state.showSideDrawer} closed={this.sideDrawerClosedHandler} />
+        <main className={classes.Content}>{this.props.children}</main>
       </AuxWrapper>
-    )
+    );
   }
 }
 

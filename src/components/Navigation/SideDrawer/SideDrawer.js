@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AuxWrapper from '../../../hoc/AuxWrapper';
+import AuxWrapper from '../../../hoc/AuxWrapper/AuxWrapper';
 
 import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
@@ -8,10 +8,10 @@ import Backdrop from '../../UI/Backdrop/Backdrop';
 
 import classes from './SideDrawer.scss';
 
-const sideDrawer = (props) => {
+const sideDrawer = props => {
   let attachedClasses = [classes.SideDrawer, classes.Close];
   if (props.open) {
-    attachedClasses = [classes.SideDrawer, classes.Open]
+    attachedClasses = [classes.SideDrawer, classes.Open];
   }
 
   return (

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AuxWrapper from '../../hoc/AuxWrapper';
+import AuxWrapper from '../../hoc/AuxWrapper/AuxWrapper';
 
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
@@ -31,7 +31,7 @@ class BurgerBuilder extends Component {
     totalPrice: 4,
     purchasable: false,
     purchasing: false
-  }
+  };
 
   updatePurchaseState(ingredients) {
     const sum = Object.keys(ingredients)
@@ -47,7 +47,7 @@ class BurgerBuilder extends Component {
     });
   }
 
-  addIngredientHandler = (type) => {
+  addIngredientHandler = type => {
     const oldCount = this.state.ingredients[type];
     const updateCount = oldCount + 1;
     const updatedIngredient = {
@@ -66,7 +66,7 @@ class BurgerBuilder extends Component {
     this.updatePurchaseState(updatedIngredient);
   };
 
-  removeIngredientHandler = (type) => {
+  removeIngredientHandler = type => {
     const oldCount = this.state.ingredients[type];
 
     if (oldCount <= 0) {
